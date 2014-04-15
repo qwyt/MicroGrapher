@@ -21,7 +21,7 @@ namespace MicroGrapher4
         public Graph(string function)
         {
             Function = function;
-            Function = function;
+            new FunctionRepr("jaka");
         }
 
 
