@@ -20,20 +20,41 @@ namespace MicroGrapher4
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Curve> curves = new List<Curve>();
+
         public MainWindow()
         {
+
             InitializeComponent();
 
-            Graph newGraph = new Graph("x^2");
-            Console.WriteLine(newGraph.ToString());
+            Loaded += delegate
+            {
 
-            foreach(Point point in newGraph.GetPoints() )
-                Console.WriteLine(point.ToString()+"," ); 
+
+
+                Graph newGraph = new Graph("x^2");
+                Console.WriteLine(newGraph.ToString());
+
+                /*
+                foreach(Point point in newGraph.GetPoints() )
+                    Console.WriteLine(point.ToString()+"," );
+                */
+
+
+                CartesianTable table = new CartesianTable(canvas, this);
+                Curve curve = new Curve(newGraph, table);
+
+                Console.WriteLine(curve.ToString());
+
+                table.Refresh();
+            };
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+
     }
 }

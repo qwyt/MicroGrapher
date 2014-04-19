@@ -21,21 +21,14 @@ namespace MicroGrapher4
         public Graph(string function)
         {
             Function = function;
-            new FunctionRepr("jaka");
         }
 
-
-        public Point[] GetPoints(double from = 0d, double to = 10d, int count = 10)
+        public Point GetPoint(double value)
         {
-            var output = new Point[count];
-            double iterator = (to - from)/count;
-            double value = from;
-            for (int i = 0; i < count; i++, value+=iterator)
-            {
-                output[i] = new Point(value, _function.GetValueAtPoint( value) );
-            }
-            return output;
+            return new Point(value, _function.GetValueAtPoint(value));
         }
+
+
         public override string ToString()
         {
             return _function.ToString();

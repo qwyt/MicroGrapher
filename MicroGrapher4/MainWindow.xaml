@@ -2,10 +2,39 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="320*"/>
+            <ColumnDefinition Width="22*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="280*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Canvas Name="canvas" Background="#FFE8E6E5" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
 
-        <Canvas HorizontalAlignment="Left" Height="280" Margin="180,0,0,19" VerticalAlignment="Bottom" Width="320" Background="#FFE8E6E5" Grid.RowSpan="2">
-            <Border BorderBrush="Black" BorderThickness="1" Height="280" Width="320"/>
+            </Canvas.RenderTransform>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+
+                </Border.RenderTransform>
+            </Border>
         </Canvas>
-
+    </Grid>
 
 </Window>
